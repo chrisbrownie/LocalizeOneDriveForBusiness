@@ -10,11 +10,11 @@ This is a script based on [@brendankarl](https://github.com/brendankarl)'s OneDr
 * Download the script and place it in a folder
 * Grant permissions to own OneDrive with:
 
-    GrantPermissionsForOneDrive.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)
+    `GrantPermissionsForOneDrive.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)`
 
 * Run the script with the following parameters:
 
-    LocalizeOneDriveForBusiness.ps1 -NewLocaleId 1234 -TenantServiceDomain yourcompany -Credentials (Get-Credential)
+    `LocalizeOneDriveForBusiness.ps1 -NewLocaleId 1234 -TenantServiceDomain yourcompany -Credentials (Get-Credential)`
 
 Find your Locale ID [here](https://msdn.microsoft.com/en-us/library/ms912047%28v=winembedded.10%29.aspx?f=255&MSPPError=-2147217396).
 
