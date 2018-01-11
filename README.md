@@ -10,7 +10,7 @@ This is a script based on [@brendankarl](https://github.com/brendankarl)'s OneDr
 * Download the script and place it in a folder
 * Grant permissions to own OneDrive with:
 
-    GranteDiscoveryPermissionsForOneDrive.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)
+    GrantPermissionsForOneDrive.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)
 
 * Run the script with the following parameters:
 
