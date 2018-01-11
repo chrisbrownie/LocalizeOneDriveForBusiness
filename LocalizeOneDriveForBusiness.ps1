@@ -7,7 +7,6 @@ Param(
     [string]
     $TenantServiceDomain,
 
-    [Parameter]
     [System.Management.Automation.PSCredential]
     $Credentials
 )
@@ -28,10 +27,12 @@ Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extens
 
 #Specify tenant admin credentials if they weren't provided as part of running the script
 if (-not $Credentials) {
-    $Credentials = Get-Credential -Message "Provide your SharePoint Online Credentials"
+    $inlineCredentials = Get-Credential -Message "Provide your SharePoint Online Credentials"
+    $credObject = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($inlineCredentials.UserName, $inlineCredentials.Password)
 }
-
-$credObject = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Credentials.UserName, $Credentials.Password)
+else {
+    $credObject = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Credentials.UserName, $Credentials.Password)
+}
 
 $siteURL = "https://{0}-my.sharepoint.com/" -f $TenantServiceDomain
 
