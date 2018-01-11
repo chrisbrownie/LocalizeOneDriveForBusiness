@@ -8,8 +8,13 @@ This is a script based on [@brendankarl](https://github.com/brendankarl)'s OneDr
 
 ## Execution
 * Download the script and place it in a folder
+* Grant permissions to own OneDrive with:
+
+    GranteDiscoveryPermissionsForOneDrive.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)
+
 * Run the script with the following parameters:
-    LocalizeOneDriveForBusiness.ps1 -NewLocaleId 1234 -TenantServiceDomain yourcompany
+
+    LocalizeOneDriveForBusiness.ps1 -NewLocaleId 1234 -TenantServiceDomain yourcompany -Credentials (Get-Credential)
 
 Find your Locale ID [here](https://msdn.microsoft.com/en-us/library/ms912047%28v=winembedded.10%29.aspx?f=255&MSPPError=-2147217396).
 
@@ -18,6 +23,7 @@ Your `TenantServiceDomain` is the bit before `.onmicrosoft.com`. For example, if
 
 ## Notes
 
+* These scripts do not support MFA. Sorry. You'll need to create a temporary admin account with MFA disabled to use them.
 * If you receive permissions errors, your account may need to be assigned admin permissions on the OneDrive for Business sites. Guidance for this is [here](https://support.office.com/en-gb/article/Assign-eDiscovery-permissions-to-OneDrive-for-Business-sites-422858ff-917b-46d4-9e5b-3397f60eee4d?ui=en-US&rs=en-GB&ad=GB).
 
 
