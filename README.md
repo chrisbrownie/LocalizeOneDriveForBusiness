@@ -10,7 +10,7 @@ This is a script based on [@brendankarl](https://github.com/brendankarl)'s OneDr
 * Download the script and place it in a folder
 * Grant permissions to own OneDrive with:
 
-    `GrantPermissionsForOneDrive.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)`
+    `GrantPermissionsForOneDriveOwnership.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)`
 
 * Run the script with the following parameters:
 
@@ -20,6 +20,10 @@ Find your Locale ID [here](https://msdn.microsoft.com/en-us/library/ms912047%28v
 
 Your `TenantServiceDomain` is the bit before `.onmicrosoft.com`. For example, if your domain is 
 `contoso.sharepoint.com`, you would specify `contoso` as `TenantServiceDomain`.
+
+* If desired, revoke the OneDrive permissions with:
+
+    `RevokePermissionsForOneDriveOwnership.ps1 -TenantServiceDomain contoso -Credentials (Get-Credential)`
 
 ## Notes
 
